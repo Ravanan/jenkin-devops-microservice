@@ -22,13 +22,13 @@ pipeline {
 				}
 			}
 		}
-		
+
 		post
 		{
 			always{
 				echo ' am awesome'
 			}
-			sucess{
+			success{
 				echo 'sucess run'
 			}
 			failure{
