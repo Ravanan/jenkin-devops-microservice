@@ -22,6 +22,20 @@ pipeline {
 				}
 			}
 		}
+		
+		post
+		{
+			always{
+				echo ' am awesome'
+			}
+			sucess{
+				echo 'sucess run'
+			}
+			failure{
+				echo 'failed'
+			}
+
+		}
 	
 	}
 
