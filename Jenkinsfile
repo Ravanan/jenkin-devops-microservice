@@ -45,7 +45,7 @@ pipeline {
 				stage('Build Docker Image')
 			{
 				steps {
-					docker build -t mailravan/currency-exchange-devops:$env.BUILD_TAG
+					//docker build -t mailravan/currency-exchange-devops:$env.BUILD_TAG
 					steps {
 						script {
 							dockerImage = docker.build("mailravan/currency-exchange-devops:${env.BUILD_TAG}")
