@@ -56,12 +56,11 @@ pipeline {
 				stage('Build Push Image')
 			{
 				steps{
-					//docker build -t mailravan/currency-exchange-devops:$env.BUILD_TAG
 					steps{
 						script{
 							docker.withRegistry('','dockerhub'){
-							dockerImage.Push();
-							dockerImage.Push(latest);
+								dockerImage.push();
+								dockerImage.push('latest');
 							}
 						}
 					
