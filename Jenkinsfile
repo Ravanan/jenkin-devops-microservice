@@ -28,7 +28,7 @@ pipeline {
 					sh "mvn test"	
 				}
 			}
-				stage('Integration Test')
+			stage('Integration Test')
 			{
 				steps{
 					sh "mvn failsafe:integration-test failsafe:verify"	
@@ -42,18 +42,18 @@ pipeline {
 				}
 			}
 
-				stage('Build Docker Image')
+			stage('Build Docker Image')
 			{
-				steps {
+				steps{
 					//docker build -t mailravan/currency-exchange-devops:$env.BUILD_TAG
-					steps {
-						script {
-							dockerImage = docker.build("mailravan/currency-exchange-devops")
+					steps{
+						script{
+							dockerImage = docker.build("mailravan/currency-exchange-devops:$env.BUILD_TAG")
 						}
 					}
 				}
 			}
-				stage('Build Push Image')
+			stage('Build Push Image')
 			{
 				steps{
 					steps{
